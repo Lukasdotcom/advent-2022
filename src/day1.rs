@@ -32,6 +32,8 @@ pub fn main() {
         }
     }
     println!("Answer for day 1 part 1 is {}.", max[0]);
+    assert_eq!(max[0], 69501);
     let sum: i32 = max.iter().sum();
+    assert_eq!(sum, 202346);
     println!("Answer for day 1 part 1 with {NUMBER} elves is {sum}.");
 }
