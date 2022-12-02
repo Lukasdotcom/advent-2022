@@ -1,11 +1,9 @@
-use std::fs;
 // The numer of elves for part 2
 const NUMBER: usize = 3;
+// Used to get the data
+const DATA:&str = include_str!("../data/day1.txt");
 pub fn main() {
-    // Used to get the data
-    let data =
-        fs::read_to_string("data/day1.txt").expect("Should have been able to read day1.txt file");
-    let data: Vec<&str> = data.split("\n").collect();
+    let data: Vec<&str> = DATA.split("\n").collect();
     let mut max = [0; NUMBER];
     let mut total = 0;
     // Goes through every line in the file
