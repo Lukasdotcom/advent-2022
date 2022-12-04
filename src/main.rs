@@ -3,6 +3,7 @@ const DAY:i32 = 0;
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 fn main() {
     if DAY == 0 || DAY == 1 {
         day1::main();
@@ -12,5 +13,8 @@ fn main() {
     }
     if DAY == 0 || DAY == 3 {
         day3::main();
+    }
+    if DAY == 0 || DAY == 4 {
+        day4::main();
     }
 }
