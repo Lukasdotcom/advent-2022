@@ -5,6 +5,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 fn main() {
     let now = Instant::now();
     if DAY == 0 || DAY == 1 {
@@ -18,6 +19,9 @@ fn main() {
     }
     if DAY == 0 || DAY == 4 {
         day4::main();
+    }
+    if DAY == 0 || DAY == 5 {
+        day5::main();
     }
     let elapsed_time = now.elapsed().as_micros();
     if DAY == 0 {
