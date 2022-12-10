@@ -2,6 +2,7 @@ use std::time::Instant;
 // The day to show (0 means all of them)
 const DAY: i32 = 0;
 mod day1;
+mod day10;
 mod day2;
 mod day3;
 mod day4;
@@ -38,6 +39,9 @@ fn main() {
     }
     if DAY == 0 || DAY == 9 {
         day9::main();
+    }
+    if DAY == 0 || DAY == 10 {
+        day10::main();
     }
     let elapsed_time = now.elapsed().as_micros();
     if DAY == 0 {
