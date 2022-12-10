@@ -9,6 +9,7 @@ mod day5;
 mod day6;
 mod day7;
 mod day8;
+mod day9;
 fn main() {
     let now = Instant::now();
     if DAY == 0 || DAY == 1 {
@@ -34,6 +35,9 @@ fn main() {
     }
     if DAY == 0 || DAY == 8 {
         day8::main();
+    }
+    if DAY == 0 || DAY == 9 {
+        day9::main();
     }
     let elapsed_time = now.elapsed().as_micros();
     if DAY == 0 {
