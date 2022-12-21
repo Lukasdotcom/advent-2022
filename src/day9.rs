@@ -31,7 +31,7 @@ pub fn main() {
                         tails[x][1] += 1;
                     }
                 }
-                head[1] -= 1
+                head[1] -= 1;
             } else if direction == 'R' {
                 head[0] += 1;
             } else {
@@ -56,17 +56,17 @@ pub fn main() {
             let mut head_data = head;
             for x in 0..tails.len() {
                 let mut tail = tails[x];
-                let distx = head_data[0] as i32 - tail[0] as i32;
-                let disty = head_data[1] as i32 - tail[1] as i32;
+                let distx = (head_data[0] as i32) - (tail[0] as i32);
+                let disty = (head_data[1] as i32) - (tail[1] as i32);
                 if distx.abs() > 1 {
-                    tail[0] = (tail[0] as i32 + distx.signum()) as usize;
+                    tail[0] = ((tail[0] as i32) + distx.signum()) as usize;
                     if disty != 0 {
-                        tail[1] = (tail[1] as i32 + disty.signum()) as usize;
+                        tail[1] = ((tail[1] as i32) + disty.signum()) as usize;
                     }
                 } else if disty.abs() > 1 {
-                    tail[1] = (tail[1] as i32 + disty.signum()) as usize;
+                    tail[1] = ((tail[1] as i32) + disty.signum()) as usize;
                     if distx != 0 {
-                        tail[0] = (tail[0] as i32 + distx.signum()) as usize;
+                        tail[0] = ((tail[0] as i32) + distx.signum()) as usize;
                     }
                 }
                 tails[x] = tail;

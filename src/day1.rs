@@ -1,7 +1,7 @@
 // The numer of elves for part 2
 const NUMBER: usize = 3;
 // Used to get the data
-const DATA:&str = include_str!("../data/day1.txt");
+const DATA: &str = include_str!("../data/day1.txt");
 pub fn main() {
     let data: Vec<&str> = DATA.split("\n").collect();
     let mut max = [0; NUMBER];
@@ -17,7 +17,7 @@ pub fn main() {
                 if num != -1 {
                     let tempnum = max[x];
                     max[x] = num;
-                    num = tempnum
+                    num = tempnum;
                 } else if total > max[x] {
                     num = max[x];
                     max[x] = total;

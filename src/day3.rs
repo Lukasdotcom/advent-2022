@@ -27,7 +27,7 @@ pub fn main() {
     assert_eq!(sum, 7701);
     let mut sum2 = 0;
     // Goes through every group of 3 lines in the file
-    for x in 0..((&data).len() / 3) {
+    for x in 0..(&data).len() / 3 {
         // Checks which of the letters in the first elf are in all of the other ones
         for letter in data[x * 3].chars() {
             if data[x * 3 + 1].contains(letter) && data[x * 3 + 2].contains(letter) {

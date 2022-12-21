@@ -9,8 +9,8 @@ struct Monkey {
     items: Vec<i64>,
     operation: Operation, // Stores the operation the monkey does on the items worry level
     operation_amount: i64,
-    test: i64,         // Stores the divisibility test
-    test_true: usize,  // The monkey to throw to when the test comes back true
+    test: i64, // Stores the divisibility test
+    test_true: usize, // The monkey to throw to when the test comes back true
     test_false: usize, // The monkey to throw to when the test comes back false
     inspections: usize,
 }
@@ -29,7 +29,7 @@ impl Monkey {
             .collect();
         let mut operation = Operation::Power;
         let mut operation_amount = 2;
-        let operation_str = &(description.nth(0).expect("Bad Operation syntax")[23..]);
+        let operation_str = &description.nth(0).expect("Bad Operation syntax")[23..];
         // Figures out what the operation is
         if !operation_str.contains("old") {
             let mut chars = operation_str.chars();
@@ -69,9 +69,15 @@ impl Monkey {
         let mut item = self.items.pop().expect("Invalid inspection");
         self.inspections += 1;
         match self.operation {
-            Operation::Add => item += self.operation_amount,
-            Operation::Multiply => item *= self.operation_amount,
-            Operation::Power => item *= item,
+            Operation::Add => {
+                item += self.operation_amount;
+            }
+            Operation::Multiply => {
+                item *= self.operation_amount;
+            }
+            Operation::Power => {
+                item *= item;
+            }
         }
         if part1 {
             item /= 3;
@@ -111,7 +117,10 @@ pub fn main() {
         }
     }
     // Finds the 2 bussiest monkeys for part1
-    let mut part1: Vec<usize> = monkeys.iter().map(|x| x.inspections).collect();
+    let mut part1: Vec<usize> = monkeys
+        .iter()
+        .map(|x| x.inspections)
+        .collect();
     part1.sort();
     part1.reverse();
     let part1 = part1[0] * part1[1];
@@ -124,7 +133,10 @@ pub fn main() {
         monkeys.push(monkey);
     }
     // Finds the lowest common multiple of all the monkeys divisor tests
-    let lcm: i64 = monkeys.iter().map(|x| x.test).product();
+    let lcm: i64 = monkeys
+        .iter()
+        .map(|x| x.test)
+        .product();
     // Simulates a thousand round
     for _ in 0..10000 {
         for count in 0..monkeys.len() {
@@ -140,7 +152,10 @@ pub fn main() {
         }
     }
     // Finds the 2 bussiest monkeys for part2
-    let mut part2: Vec<usize> = monkeys.iter().map(|x| x.inspections).collect();
+    let mut part2: Vec<usize> = monkeys
+        .iter()
+        .map(|x| x.inspections)
+        .collect();
     part2.sort();
     part2.reverse();
     let part2 = part2[0] * part2[1];

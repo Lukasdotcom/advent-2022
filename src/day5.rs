@@ -7,13 +7,13 @@ pub fn main() {
     let rows = (alignment_data[0].len() - 3) / 4 + 1;
     let mut alignment: Vec<Vec<char>> = [].to_vec(); // Stores the movement for part 1
     let mut alignment2 = alignment.clone(); // Stores the movement for part 2
-                                            // Generates for every column a vector
+    // Generates for every column a vector
     for _ in 0..rows {
         alignment.push(vec![]);
         alignment2.push(vec![]);
     }
     let moves: Vec<&str> = data[1].split("\n").collect(); // Stores all the moves
-                                                          // Goes through every line horizantly in the data
+    // Goes through every line horizantly in the data
     for line in 1..alignment_data.len() {
         let line = alignment_data[line];
         // Checks each column if it contains something
@@ -44,7 +44,7 @@ pub fn main() {
         }
         // Movement for part 2
         let mut movements: Vec<char> = vec![]; // Stores what the crane carries
-                                               // Adds everything to the crane
+        // Adds everything to the crane
         for _ in 0..crane_size {
             let pop = alignment2[grab_column].pop().expect("Should not be empty");
             movements.push(pop);
